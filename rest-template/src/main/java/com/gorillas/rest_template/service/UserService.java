@@ -29,7 +29,9 @@ public class UserService {
         restTemplate.postForObject(basePath+"/users",user,UserDTO.class);
     }
 
-    public void updateUser(UserDTO user, Integer id){}
+    public void updateUser(UserDTO user, Integer id){
+        restTemplate.put(basePath+"/users/"+id,user);
+    }
 
     public void deleteUser(Integer id){}
 }
