@@ -33,5 +33,7 @@ public class UserService {
         restTemplate.put(basePath+"/users/"+id,user);
     }
 
-    public void deleteUser(Integer id){}
+    public void deleteUser(Integer id){
+        restTemplate.delete(basePath+"/"+id);
+    }
 }
