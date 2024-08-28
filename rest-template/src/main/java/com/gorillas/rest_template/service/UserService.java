@@ -21,16 +21,16 @@ public class UserService {
 
 
     public List<UserDTO> getUsers(){
-        UserDTO[] response = restTemplate.getForObject(basePath+"/users",UserDTO[].class);
+        UserDTO[] response = restTemplate.getForObject(basePath,UserDTO[].class);
         return Arrays.asList(response);
     }
 
     public void saveUser(UserDTO user){
-        restTemplate.postForObject(basePath+"/users",user,UserDTO.class);
+        restTemplate.postForObject(basePath,user,UserDTO.class);
     }
 
     public void updateUser(UserDTO user, Integer id){
-        restTemplate.put(basePath+"/users/"+id,user);
+        restTemplate.put(basePath+"/"+id,user);
     }
 
     public void deleteUser(Integer id){
