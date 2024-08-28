@@ -25,7 +25,9 @@ public class UserService {
         return Arrays.asList(response);
     }
 
-    public void saveUser(UserDTO user){}
+    public void saveUser(UserDTO user){
+        restTemplate.postForObject(basePath+"/users",user,UserDTO.class);
+    }
 
     public void updateUser(UserDTO user, Integer id){}
 
